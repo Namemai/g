@@ -730,6 +730,11 @@ def lineBot(op):
                 elif text.lower() == 'h6':
                     helpLanguange = helplanguange()
                     line.sendMessage(to, str(helpLanguange))
+                elif msg.text.lower().startswith("เขียน "):
+                    sep = msg.text.split(" ")
+                    textnya = msg.text.replace(sep[0] + " ","")
+                    urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
+                    line.sendImageWithURL(msg.to, urlnya)
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
