@@ -97,9 +97,13 @@ settings = {
     "pro_name": {},
     "message1":"แอดมารัก หรือ แอดมารัน😊",
     "message":"บัญชีนี้ถูกป้องกันโดย by,Mai ระบบได้บล็อคคุณอัตโนมัติ!",
-    "comment":"""ŚẾL₣ВΌŦ BY:
+    "comment":"""ระบบออโต้ BY:
 ╔══════════════┓
 ╠ Mai
+╠ไอดีไลน์ mai06555mai
+╠ลิ้งไอดี
+╠http://line.me/ti/p/~mai06555mai
+╠เบอติดต่อ 0655581505
 ╚══════════════┛""",
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
@@ -344,9 +348,12 @@ def mentionMembers(to, mid):
 
 def myhelp():
     myHelp = """╔══════════════┓
-╠ "Mai"
+╠ "by,Mai"
 ╚══════════════┛
 ╔══════════════┓
+╠★►ป้องกัน on/off
+╠★►ข้อความ on/off
+╠★►เขียน = ใส่ข้อความ
 ╠★►Me ↔คอนแทค
 ╠★►H1 ↔คำสั่งใช้ในกลุ่ม
 ╠★►H2 ↔คำสั่งตั้งค่าเชลล์
@@ -498,11 +505,11 @@ def helpsetting():
 ╠★►เปิดแชร์ ↔ ปิดแชร์
 ╠★►เปิดตรวจ ↔ ปิดตรวจ
 ╠★►เปิดพูด ↔ ปิดพูด
-╠★►ตั้งแอด;
-╠★►ตั้งแทค;
-╠★►คอมเม้น;
-╠★►ตั้งออก;
-╠★►ตั้งเข้า;
+╠★►ตั้งแอด:
+╠★►ตั้งแทค:
+╠★►คอมเม้น:
+╠★►ตั้งออก:
+╠★►ตั้งเข้า:
 ╠★►เปิดกัน ↔ ปิดกัน
 ╠★►กันลิ้ง ↔ ปิดกันลิ้ง
 ╠★►กันยก ↔ ปิดกันยก
@@ -726,12 +733,12 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
-                    line.sendMessage(to, "ŚẾL₣ВΌŦ")
+                    line.sendMessage(to, "ВΌŦ")
                     elapsed_time = time.time() - start
                     line.sendMessage(msg.to, "[ %s ต่อวินาที ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'sp':
                     start = time.time()
-                    line.sendMessage(to, "ŚẾL₣ВΌŦ")
+                    line.sendMessage(to, "ВΌŦ")
                     elapsed_time = time.time() - start
                     line.sendMessage(msg.to, "[ %s ต่อวินาที ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'รีบอท':
@@ -742,11 +749,11 @@ def lineBot(op):
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
-                    line.sendMessage(to, "ŚẾL₣ВΌŦ ÓŅLÍŇỀ\n {}".format(str(runtime)))
+                    line.sendMessage(to, "ВΌŦ ÓŅLÍŇỀ\n {}".format(str(runtime)))
                 elif text.lower() == 'ข้อมูล':
                     try:
                         arr = []
-                        owner = "u3ad4cddc52d00852660eab13dd0b4ae4"
+                        owner = "[by.mai]"
                         creator = line.getContact(owner)
                         contact = line.getContact(lineMID)
                         grouplist = line.getGroupIdsJoined()
@@ -758,7 +765,6 @@ def lineBot(op):
                         ret_ += "\n╠❥ เพื่อน ═ {}".format(str(len(contactlist)))
                         ret_ += "\n╠❥ บล็อค ═ {}".format(str(len(blockedlist)))
                         ret_ += "\n╠══[ Status ] \n═ {}".format(contact.statusMessage)
-                        ret_ += "\n╠❥ ผู้สร้าง ═ {}".format(creator.displayName)
                         ret_ += "\n╚══[by,mai]"
                         line.sendContact(to, owner)
                         line.sendMessage(to, str(ret_))
@@ -803,7 +809,7 @@ def lineBot(op):
                     line.sendMessage(to,"(｡◕‿◕｡)")
 #===========
                 elif "เทส" == msg.text.lower():
-                    line.sendMessage(to,"ŚẾL₣ВΌŦ\n(｡◕‿◕｡)")
+                    line.sendMessage(to,"ВΌŦ\n(｡◕‿◕｡)")
                     line.sendMessage(to,"███████████..100.0%")                    
                     line.sendMessage(to,"(｡◕‿◕｡)\nบอทยังทำงานคับเจ้านาย😁")       
 #==============================================================================#
@@ -816,8 +822,8 @@ def lineBot(op):
                     line.sendMessage(to,"บ่แมนหมาวัดแล้วกะบ่ได้ใจนาง\nเลียหีจนครางกะดักใจนางไว้บ่ได้\nเย็ดดีปานได๋เบิร์นดีปานได๋เจ้ากะบ่หัวซา\nก้มเลียหีให่..บ่สงสารลิ้นเจ้าของ\nเย็ดหีจนร้อง..เลียดากอ้ายกะเลียให่\nมักเด้าหลาย..มักเด้าหลายได้ยินบ่\nรอเด้าอยู่เด้อออออ..แคมแดง")             
 #==============================================================================#
                 elif "creator" == msg.text.lower():
-                    line.sendMessage(to,"\n(｡◕‿◕｡)")
-                    line.sendContact(to, "by,mai")
+                    line.sendMessage(to,"by,mai\n(｡◕‿◕｡)")
+                    line.sendContact(to, "")
                 elif "ไวรัส" == msg.text.lower():
                     line.sendMessage(to, "หยุด ขอให้อยู่ในความสงบ")
                     line.sendContact(to, "phusui',")
@@ -893,7 +899,7 @@ def lineBot(op):
                 elif text.lower() == 'ปิดเข้า':
                     settings["autoJoin"] = False
                     line.sendMessage(to, "❥ปิดเข้ากลุ่มออโต้ ❋")
-                elif "ยก:" in msg.text:
+                elif "ยก" in msg.text:
                     try:
                         strnum = msg.text.replace("gcancel:","")
                         if strnum == "off":
@@ -1184,7 +1190,7 @@ def lineBot(op):
                     except Exception as e:
                         line.sendText(msg.to, str (e))
                         
-                elif msg.text in ["allprotect on",".เปิดกทม"]:
+                elif msg.text in ["ป้องกัน on"]:
                         settings["kickMention"] = True
                         settings["Aip"] = False
                         RfuProtect["protect"] = True
@@ -1195,7 +1201,7 @@ def lineBot(op):
                         RfuProtect["Protectjoin"] = True
                         line.sendText(msg.to,"❥ระบบป้องกันทั้งหมดเปิด ❋")
 						
-                elif msg.text in ["allprotect off",".ปิดกทม"]:
+                elif msg.text in ["ป้องกัน off"]:
                         settings["kickMention"] = False
                         settings["Aip"] = False
                         RfuProtect["protect"] = False
@@ -1206,7 +1212,7 @@ def lineBot(op):
                         RfuProtect["Protectjoin"] = False
                         line.sendText(msg.to,"❥ระบบป้องกันทั้งหมดปิด ❋")
                         
-                elif msg.text in ["Allmsg on",".เปิดข้อความ"]:
+                elif msg.text in ["ข้อความ on"]:
                         settings["Wc"] = True
                         settings["Lv"] = True
                         settings["Nk"] = True
@@ -1220,7 +1226,7 @@ def lineBot(op):
                         settings["Api"] = True
                         line.sendText(msg.to,"การตั้งค่าชุดข้อความทั้งหมด เปิด👌")
 						
-                elif msg.text in ["Allmsg off",".ปิดข้อความ"]:
+                elif msg.text in ["ข้อความ off"]:
                         settings["Wc"] = False
                         settings["Lv"] = False
                         settings["Nk"] = False
@@ -1315,13 +1321,13 @@ def lineBot(op):
                 elif text.lower() == 'ชื่อกลุ่ม':
                     gid = line.getGroup(to)
                     line.sendMessage(to, "❥ชื่อกลุ่ม ❋ \n\n" + gid.name)
-                elif text.lower() == 'ลิ้ง':
+                elif text.lower() == '.ลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == False:
                             ticket = line.reissueGroupTicket(to)
                             line.sendMessage(to, "❥ลิ้งของกลุ่ม❋\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
-                elif text.lower() == 'เปิดลิ้ง':
+                elif text.lower() == '.เปิดลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -1330,7 +1336,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             line.updateGroup(group)
                             line.sendMessage(to, "❥ เปิดลิ้ง สำเร็จ ❋")
-                elif text.lower() == 'ปิดลิ้ง':
+                elif text.lower() == '.ปิดลิ้ง':
                     if msg.toType == 2:
                         group = line.getGroup(to)
                         if group.preventedJoinByTicket == True:
@@ -1364,7 +1370,7 @@ def lineBot(op):
                     ret_ += "\n╠ ❥จำนวนค้างเชิญ❋ : {}".format(gPending)
                     ret_ += "\n╠ ❥ลิ้งของกลุ่ม❋ : {}".format(gQr)
                     ret_ += "\n╠ ❥ลิ้งกลุ่ม❋ : {}".format(gTicket)
-                    ret_ += "\n╚══[ VҜ ŚẾL₣ВΌŦ ]"
+                    ret_ += "\n╚══[ ВΌŦ mai ]"
                     line.sendMessage(to, str(ret_))
                     line.sendImageWithURL(to, path)
                 elif text.lower() == 'สมาชิก':
@@ -1460,26 +1466,26 @@ def lineBot(op):
                                thisgroup = line.getGroups([msg.to])
                                Mids = [target for contact in thisgroup[0].members]
                                mi_d = Mids[:33]
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
-                               line.createGroup("VҜ ŚẾL₣ВΌŦ",mi_d)
-                               line.sendText(msg.to,"[ŚẾL₣ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
+                               line.createGroup("ВΌŦ",mi_d)
+                               line.sendText(msg.to,"[ВΌŦ LÍŇỀ]")
                                line.sendText(msg.to,"❋ทำการรัน สำเร็จ")
                             except:
                                 pass
@@ -1490,118 +1496,52 @@ def lineBot(op):
                     gs = line.getGroup(msg.to)
                     for g in gs.members:
                         if _nametarget == g.displayName:
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ") 
-                           line.sendText(g.mid,"VҜ ŚẾL₣ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ") 
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
+                           line.sendText(g.mid,"ВΌŦ")
                            line.sendText(msg.to, "❋ทำการรันแชท สำเร็จ❋")
                            print (" Spammed !")
                 elif "รัน: " in msg.text.lower():
