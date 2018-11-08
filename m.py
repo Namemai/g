@@ -856,7 +856,7 @@ def lineBot(op):
                         else: ret_ += "\n╠❋ ข้อความคนออกปิด ✘ "
                         if settings["Nk"] == True: ret_ += "\n╠❋ ข้อความแจ้งเตือนคนลบเปิด ✔"
                         else: ret_ += "\n╠❋ ข้อความแจ้งเตือนคนลบปิด ✘ "
-                        if settings["autoCancel"]["off"] == True:ret_+="\n╠❋ ปฏิเสธกลุ่มเชิญที่มีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
+                        if settings["autoCancel"] == True:ret_+="\n╠❋ ปฏิเสธกลุ่มเชิญที่มีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
                         else: ret_ += "\n╠❋ ปฏิเสธกลุ่มเชิญปิด    ✘ "						
                         if settings["autoLeave"] == True: ret_ += "\n╠❋ ออกแชทรวมออโต้เปิด✔"
                         else: ret_ += "\n╠❋ ออกแชทรวมออโต้ปิด ✘ "
