@@ -362,8 +362,6 @@ def myhelp():
 ╠★►H5 ↔ คำสั่งแปลภาษา
 ╠★►บอทออน ↔ การใช้งานบอท
 ╠★►แทค ↔ แทคคนทั้งห้อง
-╠★►ทีมบอท ↔ ผู้พัฒนาบอท
-╠★►Creator ↔ ผู้สร้างบอท
 ╠★►Sp ↔ ความเร็วของบอท
 ╰═★"""
     return myHelp
@@ -389,21 +387,21 @@ def listgrup():
 ╠★►เปิดแอบ
 ╠★►ปิดแอบ
 ╠★►มอง
-╠★►ใครอ่าน
+╠★►อ่าน
 ╠★►ยกเลิก
 ╠★►โทร
 ╠★►เชิญคลอ
 ╠★►ดึง
 ╠★►เปลี่ยนรูปกลุ่ม
-╠★►ประกาศ
+╠★►ประกาศ:=ใส่ข้อความ
 ╠★►Vk @
-╠★►หีแหก @
 ╠★►แบนหมด
 ╠★►แบน @
 ╠★►ยกเลิก @
 ╠★►ล้างแบน @
 ╠★►เตะแบน
 ╠★►เช็คไอดี
+╠★►เตะ @
 ╰═★"""
     return listGrup
 
@@ -454,10 +452,6 @@ def helpset():
 ╠★►Sp ↔ Speed
 ╠★►เปลี่ยนดิส
 ╠★►ไวรัส
-╠★►ปิดไฟ
-╠★►Creator
-╠★►ทีมบอท
-╠★►ผส
 ╠★►บอทออน
 ╠★►ข้อความเข้า
 ╠★►ข้อความออก
@@ -473,13 +467,13 @@ def helpset():
 ╠★►รัน @
 ╠★►รันแชท
 ╠★►แบน @ ↔ ปลด @
-╠★►พิมตาม @
-╠★►ลบพิมตาม@
-╠★►พิมตาม on ↔ off
-╠★►เชคพิมตาม
+╠★►เลียนแบบ @
+╠★►ยกเลิก @
+╠★►Nutmic on ↔ off
+╠★►เชคเลียนแบบ
 ╠★►เตะแบน
-╠★►ชื่อ;
-╠★►ตัส;
+╠★►ชื่อ:
+╠★►ตัส:
 ╠★►Spam on ↔ off
 ╰═★"""
     return helpSet
@@ -502,7 +496,7 @@ def helpsetting():
 ╠★►แทค3 on ↔ off
 ╠★►เตะแทค on↔ off
 ╠★►เปิดคท ↔ ปิดคท
-╠★►เปิดแชร์ ↔ ปิดแชร์
+╠★►เปิดแช ↔ ปิดแช
 ╠★►เปิดตรวจ ↔ ปิดตรวจ
 ╠★►เปิดพูด ↔ ปิดพูด
 ╠★►ตั้งแอด:
@@ -788,7 +782,7 @@ def lineBot(op):
                     except Exception as e:
                         line.sendMessage(msg.to, str(e))
 #========================
-                elif "Vk " in msg.text:
+                elif "เตะดึง " in msg.text:
                         vkick0 = msg.text.replace("Vk ","")
                         vkick1 = vkick0.rstrip()
                         vkick2 = vkick1.replace("@","")
@@ -824,7 +818,6 @@ def lineBot(op):
                     line.sendMessage(to,"0.00300600 second")  
 #===========
                 elif "เทส" == msg.text.lower():
-                    line.sendMessage(to,"ВΌŦ\n(｡◕‿◕｡)")
                     line.sendMessage(to,"███████████..100.0%")                    
                     line.sendMessage(to,"(｡◕‿◕｡)\nบอทยังทำงานคับเจ้านาย😁")       
 #==============================================================================#
@@ -953,10 +946,10 @@ def lineBot(op):
                 elif text.lower() == 'ติ้ก off':
                     settings["checkSticker"] = False
                     line.sendMessage(to, "❥ปิดระบบเช็คสติ้กเกอร์ ❋")
-                elif text.lower() == 'มุด on':
+                elif text.lower() == 'มุดลิ้ง on':
                     settings["autoJoinTicket"] = True
                     line.sendMessage(to, "❥เปิดระบบมุดลิ้ง ❋")
-                elif text.lower() == 'มุด off':
+                elif text.lower() == 'มุดลิ้ง off':
                     settings["autoJoinTicket"] = False
                     line.sendMessage(to, "❥ปิดระบบมุดลิ้ง ❋")
                 elif text.lower() == 'o on':
@@ -1167,7 +1160,7 @@ def lineBot(op):
                 elif "โพส " in msg.text:
                     tl_text = msg.text.replace("โพส ","")
                     line.sendText(msg.to,"line://home/post?userMid="+lineMID+"&postId="+line.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
-                elif "copy " in msg.text:
+                elif "fc " in msg.text:
                   if msg._from in admin:
                     targets = []
                     key = eval(msg.contentMetadata["MENTION"])
@@ -1196,9 +1189,9 @@ def lineBot(op):
                             line.sendMessage(msg.to, "Failed!")
                             print (e)
 
-                elif msg.text in ["คืนร่าง"]:
+                elif msg.text in ["fc off"]:
                     try:
-                        #line.updateProfile.pictureStatus(backup.pictureStatus)
+                        line.updateProfile.pictureStatus(backup.pictureStatus)
                         line.updateProfile.statusMessage(backup.statusMessage)
                         line.updateProfile.displayName(backup.displayName)
                         line.sendMessage(msg.to, "กลับร่างเดิมแล้ว")
@@ -1253,7 +1246,7 @@ def lineBot(op):
                         settings["Api"] = False
                         line.sendText(msg.to,"การตั้งค่าชุดข้อความทั้งหมด ปิด👌")
 #==============================================================================#
-                elif msg.text.lower().startswith("เลียนแบบ "):
+                elif msg.text.lower().startswith("พิมตาม "):
                     targets = []
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
@@ -1267,7 +1260,7 @@ def lineBot(op):
                         except:
                             line.sendMessage(msg.to,"ผิดพลาด!")
                             break
-                elif msg.text.lower().startswith("ยกเลิก "):
+                elif msg.text.lower().startswith("ลบพิมตาม "):
                     targets = []
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
@@ -1281,7 +1274,7 @@ def lineBot(op):
                         except:
                             line.sendMessage(msg.to,"ผิดพลาด !!")
                             break
-                elif text.lower() == 'เชคเลียนแบบ':
+                elif text.lower() == 'เชคพิมตาม':
                     if settings["mimic"]["target"] == {}:
                         line.sendMessage(msg.to,"❥ ไม่พบ ❋")
                     else:
@@ -1290,7 +1283,7 @@ def lineBot(op):
                             mc += "\n╠ "+line.getContact(mi_d).displayName
                         line.sendMessage(msg.to,mc + "\n╚══[ VҜ ŚẾL₣ВΌŦ ]")
                     
-                elif "nutmic" in msg.text.lower():
+                elif "พิมตาม " in msg.text.lower():
                     sep = text.split(" ")
                     mic = text.replace(sep[0] + " ","")
                     if mic == "on":
@@ -1503,7 +1496,7 @@ def lineBot(op):
                             except:
                                 pass
                     print ("[Command]covergroup]")
-                elif "รันแชท @" in msg.text:
+                elif "รันแชท " in msg.text:
                     _name = msg.text.replace("รันแชท @","")
                     _nametarget = _name.rstrip(' ')
                     gs = line.getGroup(msg.to)
