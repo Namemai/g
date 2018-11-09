@@ -736,6 +736,18 @@ def lineBot(op):
                     urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
                     line.sendImageWithURL(msg.to, urlnya)
 #==============================================================================#
+                elif msg.text.lower().startswith("เตะ "):
+                    targets = []
+                    key = eval(msg.contentMetadata["MENTION"])
+                    key["MENTIONEES"][0]["M"]
+                    for x in key["MENTIONEES"]:
+                        targets.append(x["M"])
+                    for target in targets:
+                        try:
+                            line.kickoutFromGroup(msg.to,[target])
+                        except:
+                            line.sendText(msg.to,"Error")
+#==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
                     line.sendMessage(to, "ВΌŦ")
@@ -3815,7 +3827,7 @@ def lineBot(op):
                             settings["checkContact"] = False
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดระบบอ่านคอนแทค❋")
-                elif msg.text.lower() == 'เปิดแชร์':
+                elif msg.text.lower() == 'เปิดแช':
                         if settings["checkPost"] == True:
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"เปิดระบบเช็คโพสบนทามไลน์" )
@@ -3823,7 +3835,7 @@ def lineBot(op):
                             settings["checkPost"] = True
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"เปิดระบบเช็คโพสบนทามไลน์อยู่แล้ว ")
-                elif msg.text.lower() == 'ปิดแชร์':
+                elif msg.text.lower() == 'ปิดแช':
                         if settings["checkPost"] == False:
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดระบบเช็คโพสบนทามไลน์ ❋")
@@ -3841,7 +3853,7 @@ def lineBot(op):
                         line.sendMessage(to, "❋ส่งรูปภาพลงมา❋")
                         
                 elif text.lower() == "ปิดไฟ":
-                    line.sendContact(to, "u0035a5a6c5ae9d30c9a0992ecbc39395',")      
+                    line.sendContact(to, "")      
 
                 elif text.lower() == 'ลบรัน':
                     gid = line.getGroupIdsInvited()
@@ -4304,10 +4316,10 @@ def lineBot(op):
                  return
              dan = line.getContact(op.param2)
              tgb = line.getGroup(op.param1)
-             line.sendMessage(op.param1, str(settings["welcome"]) +"\nคนน่ารักคนน่าตาดี❋ {}, ยินดีต้อนรับเข้ากลุ่ม {}\n by.Mai bot❋".format(str(dan.displayName),str(tgb.name)))
+             line.sendMessage(op.param1, str(settings["welcome"]) +"\n❋ {}, ยินดีต้อนรับเข้ากลุ่ม {}\n by.Mai bot❋".format(str(dan.displayName),str(tgb.name)))
              line.sendContact(op.param1, op.param2)
-             line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
-             line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
+             #line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
+             #line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
              line.sendMessage(op.param1, str(settings["comment"]))
         if op.type == 19:
            print ("MEMBER KICKOUT TO GROUP")
@@ -4318,7 +4330,7 @@ def lineBot(op):
              tgb = line.getGroup(op.param1)
              line.sendMessage(op.param1,str(settings["kick"]) + "\nเฮ้ย {}, คือหยังมันโหดแท้วะΣ(っﾟДﾟ；)っ ".format(str(dan.displayName)))
              line.sendContact(op.param1, op.param2)
-             line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
+#             line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
              line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
            print ("MEMBER LEAVE TO GROUP")
@@ -4327,7 +4339,7 @@ def lineBot(op):
                  return
              dan = line.getContact(op.param2)
              tgb = line.getGroup(op.param1)
-             line.sendMessage(op.param1,str(settings["bye"]) + "\n {}, ไปซะละ {} \nลาก่อยยย❋".format(str(dan.displayName),str(tgb.name)))
+             line.sendMessage(op.param1,str(settings["bye"]) + "\n{} \nลาก่อยยย❋".format(str(dan.displayName),str(tgb.name)))
              line.sendContact(op.param1, op.param2)
              line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 55:
