@@ -84,7 +84,7 @@ settings = {
     "changePictureProfile":False,
     "unsendMessage": False,
     "autoJoinTicket": False,
-    "welcome":"สวัสดีคนมาใหม่\n\nตั้งข้อความต้อนรับด้วยคับ\nby,Mai",
+    "welcome":"สวัสดีครับคนมาใหม่",
     "kick":"เตะทำมัยใจเยนๆ😂\nby,Mai",
     "bye":"ลาก่อย\n",
     "Respontag":"มีไรงับ",
@@ -809,9 +809,7 @@ def lineBot(op):
                         line.sendMessage(to,"ยกเลิกค้างเชิญแล้ว (｡◕‿◕｡) " )           
 #===========
                 elif "สปีด" == msg.text.lower():
-                    line.sendMessage(to,"「ความเร็ว...」\n███▒39%\n██████▒69%\n██████████▒99%\n0.0000000000000000 second")
-                    line.sendMessage(to,"0.0000000000000000 second")  
-                    line.sendMessage(to,"(｡◕‿◕｡)")
+                    line.sendMessage(to,"0.00300600 second")  
 #===========
                 elif "เทส" == msg.text.lower():
                     line.sendMessage(to,"ВΌŦ\n(｡◕‿◕｡)")
@@ -1222,8 +1220,6 @@ def lineBot(op):
                         settings["Lv"] = True
                         settings["Nk"] = True
                         settings["autoRead"] = True
-                        settings["checkSticker"] = True 
-                        settings["checkContact"] = True 
                         settings["checkPost"] = True
                         settings["potoMention"] = True
                         settings["detectMention"] = True
@@ -1454,7 +1450,7 @@ def lineBot(op):
                     #spl = msg.text.split("รับแก้ไฟล์+เพิ่มไฟล์+แก้ภาษา\n💝ราคาดูที่หน้างาน💝\n👉มีบริการให้เช่าบอทSAMURAI\nราคา300บาทต่อเดือน💖\n#เพิ่มคิกเกอร์ตัวละ100👌\n🎀สนใจรีบทัก..บอทpython3ฟังชั่นล้นหลาม🎁กำลังรอให้คุณเป็นเจ้าของ\n(ผมจะอยู่ที่ห้องนี้แค่15นาทีนะจ๊ะ)\nselfbot by:\n╔══════════════┓\n╠™❍✯͜͡RED™SAMURAI✯͜͡❂➣ \n╚══════════════┛")
                     #if spl[len(spl)-1] == "":
                         #line.sendText(msg.to,"กดที่นี่เพื่อเขย่าข้อความด้านบน:\nline://nv/chatMsg?chatId="+msg.to+"&messageId="+msg.id)
-                elif "รัน @" in msg.text:
+                elif "รัน " in msg.text:
                     print ("[Command]covergroup")
                     _name = msg.text.replace("รัน @","")
                     _nametarget = _name.rstrip('  ')
@@ -1725,7 +1721,7 @@ def lineBot(op):
                             line.sendMessage(msg.to, "เริ่มนับคนอ่าน\n(｡◕‿◕｡)\n" + readTime)
                             
 
-                elif text.lower() == 'ใครอ่าน':
+                elif text.lower() == 'อ่าน':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
                     day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -3288,7 +3284,7 @@ def lineBot(op):
                          settings["message"] = spl
                          line.sendMessage(msg.to,"₣ВΌŦ\n❋ตั้งข้อความเมื่อมีคนแอด❋\n\n{}".format(str(spl)))
                          
-                elif 'คอมเม้น: ' in msg.text:
+                elif 'ตั้งเม้น: ' in msg.text:
                   if msg._from in admin:
                      spl = msg.text.replace('คอมเม้น: ','')
                      if spl in [""," ","\n",None]:
@@ -4308,7 +4304,7 @@ def lineBot(op):
                  return
              dan = line.getContact(op.param2)
              tgb = line.getGroup(op.param1)
-             line.sendMessage(op.param1, str(settings["welcome"]) +"\n❋สวัสดี {}, Welcome to Group {}\nมาใหม่แก้ผ้าเลย❋".format(str(dan.displayName),str(tgb.name)))
+             line.sendMessage(op.param1, str(settings["welcome"]) +"\nคนน่ารักคนน่าตาดี❋ {}, ยินดีต้อนรับเข้ากลุ่ม {}\n by.Mai bot❋".format(str(dan.displayName),str(tgb.name)))
              line.sendContact(op.param1, op.param2)
              line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
              line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
