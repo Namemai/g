@@ -458,7 +458,7 @@ def helpset():
 ╠★►ข้อความเตะ
 ╠★►ข้อความแอด
 ╠★►ข้อความแอด2
-╠★►N
+╠★►คอมเม้น
 ╠★►เพื่อน
 ╠★►เช็คบล็อค
 ╠★►ไอดีเพื่อน
@@ -806,7 +806,7 @@ def lineBot(op):
                 elif "โทร" == msg.text.lower():
                     line.inviteIntoGroupCall(msg.to,[uid.mid for uid in line.getGroup(msg.to).members if uid.mid != line.getProfile().mid])
                     line.sendMessage(msg.to,"➠เชิญเข้าร่วมการโทรสำเร็จ (｡◕‿◕｡) ")	
-                elif "ยกเลิก" == msg.text.lower():
+                elif "ยกเชิญ" == msg.text.lower():
                     if msg.toType == 2:
                         group = line.getGroup(msg.to)
                         gMembMids = [contact.mid for contact in group.invitee]
@@ -1224,7 +1224,6 @@ def lineBot(op):
                         settings["Wc"] = True
                         settings["Lv"] = True
                         settings["Nk"] = True
-                        settings["autoRead"] = True
                         settings["checkPost"] = True
                         settings["potoMention"] = True
                         settings["detectMention"] = True
@@ -4321,10 +4320,10 @@ def lineBot(op):
                  return
              dan = line.getContact(op.param2)
              tgb = line.getGroup(op.param1)
-             line.sendMessage(op.param1,str(settings["kick"]) + "\nเฮ้ย {}, คือหยังมันโหดแท้วะΣ(っﾟДﾟ；)っ ".format(str(dan.displayName)))
+             line.sendMessage(op.param1,str(settings["kick"]) + "\n{}, คือหยังมันโหดแท้วะ  ".format(str(dan.displayName)))
              line.sendContact(op.param1, op.param2)
 #             line.sendMessage(op.param1,"สเตตัส\n{}".format(str(dan.statusMessage)))
-             line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
+#             line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
            print ("MEMBER LEAVE TO GROUP")
            if settings["Lv"] == True:
@@ -4337,7 +4336,7 @@ def lineBot(op):
              line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 55:
             try:
-                if RfuCctv['cyduk'][op.param1]==True:
+                if RfuCctv['m'][op.param1]==True:
                     if op.param1 in RfuCctv['point']:
                         Name = line.getContact(op.param2).displayName
                         if Name in RfuCctv['sidermem'][op.param1]:
